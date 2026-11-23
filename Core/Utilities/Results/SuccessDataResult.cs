@@ -16,7 +16,7 @@ namespace Core.Utilities.Results
 
         }
 
-        public SuccessDataResult(string message):base(default,true,message)
+        public SuccessDataResult(Security.JWT.AccessToken accessToken, string message):base(default,true,message)
         {
 
         }
