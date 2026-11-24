@@ -59,7 +59,7 @@ namespace Business.Concrete
                 return new ErrorDataResult<User>("Kullanıcı bulunamadı.");
             }
 
-            if (userToCheck.Password != userForLogin.Password)
+            if (!HashingHelper.VerifyPasswordHash(userForLogin.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
             {
                 return new ErrorDataResult<User>("Parola hatalı.");
             }
@@ -103,6 +103,7 @@ namespace Business.Concrete
             };
             return new SuccessDataResult<TokenResponse>(response, $"Hoşgeldiniz {user.FirstName} {user.LastName}");
         }
-        }
     }
 }
+
+

@@ -17,8 +17,8 @@ namespace Core.Entities.Concrete
         public DateTime BirthDate { get; set; }
         public int GenderId { get; set; }
         public int EducationLevelId { get; set; }
-        //public byte[] PasswordSalt { get; set; }
-        //public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
+        public byte[] PasswordHash { get; set; }
 
 
 
