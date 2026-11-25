@@ -1,19 +1,21 @@
-﻿using System;
+﻿using Core.Utilities.Interceptors;
+using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Business.BusinessAspects.Autofac
 {
-    public class SecuredOperation : MethodInterception
+    public class SecuredOperation : MethodInterceptions
     {
         private string[] _roles;
 
-        private IHttpContextAccesor _HttpContextAccesor;
+        private IHttpContextAccessor _HttpContextAccesor;
 
         public SecuredOperation(string roles)
         {
             _roles = roles.Split(',');
-            _HttpContextAccesor = ServiceTool.ServiceProvider.GetService<IHttpContextAccesor>();
+            _HttpContextAccesor = ServiceTool.ServiceProvider.GetService<IHttpContextAccessor>();
         }
 
         protected override void OnBefore(IInvocation invocation)
