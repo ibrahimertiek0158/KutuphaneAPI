@@ -3,11 +3,16 @@ using Core.Entities.Concrete;
 using DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfUserOperationClaimDal : EfEntityRepositoryBase<OperationClaim, LibraryContext> , IUserOperationClaimDal
+    public class EfUserOperationClaimDal : EfEntityRepositoryBase<UserOperationClaim, LibraryContext> , IUserOperationClaimDal
     {
+
+      
+
+      
     }
 }
