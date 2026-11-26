@@ -1,4 +1,5 @@
-﻿using Core.Entities.Concrete;
+﻿using Business.Abstract;
+using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using System;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace Business.Concrete
 {
-    public class RefreshTokenManager
+    public class RefreshTokenManager : IRefreshTokenService
     {
         private IRefreshTokenDal _refreshTokenDal;
 

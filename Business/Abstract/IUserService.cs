@@ -1,8 +1,6 @@
 ﻿using Core.Entities.Concrete;
 using Core.Utilities.Results;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Abstract
 {
@@ -13,12 +11,10 @@ namespace Business.Abstract
         User GetByMail(string email);
         IDataResult<List<User>> GetAll();
         IDataResult<User> GetById(int id);
-
+        IDataResult<List<OperationClaim>> GetClaimsByUserId(int userId);
+        IDataResult<List<OperationClaim>> GetAllClaims();
         IResult AddUserClaim(UserOperationClaim userOperationClaim);
         IResult DeleteUserClaim(UserOperationClaim userOperationClaim);
-        IResult UpdateUserClaim(UserOperationClaim userOperationClaim);
-
-
-
+        IResult UpdateUserClaims(int userId, List<int> operationClaimIds);
     }
 }

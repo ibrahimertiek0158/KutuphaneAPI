@@ -1,4 +1,5 @@
-﻿using Business.BusinessAspects.Autofac;
+﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace Business.Concrete
 {
-    public class UserManager
+    public class UserManager : IUserService
     {
 
         IUserDal _userDal;
