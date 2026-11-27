@@ -5,6 +5,7 @@ using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.JWT;
 using DataAccess.Abstract;
 using Entities.DTOs;
+using Microsoft.AspNetCore.Identity;
 
 namespace Business.Concrete
 {
@@ -43,6 +44,8 @@ namespace Business.Concrete
                 FirstName = userForRegister.FirstName,
                 LastName = userForRegister.LastName,
                 Password = password,
+                PhoneNumber = userForRegister.PhoneNumber,
+                BirthDate= userForRegister.BirthDate,
                 Status = true
             };
 
